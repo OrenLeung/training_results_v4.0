@@ -64,3 +64,5 @@ RUN if [ "${TE_REVISION}" != SKIP ]; then \
 
 ADD . /workspace/ft-llm
 RUN pip install -r requirements.txt
+RUN pip install huggingface-hub==0.23.2
+RUN pip install transformers==4.40.0 
