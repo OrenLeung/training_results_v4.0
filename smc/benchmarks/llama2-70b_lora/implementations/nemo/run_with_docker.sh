@@ -61,7 +61,7 @@ trap 'set -eux; cleanup_docker' EXIT
 
 
 # Setup container
-nvidia-docker run --rm --init --detach \
+docker run --gpus all --rm --init --detach \
     --net=host --uts=host --ipc=host --security-opt=seccomp=unconfined \
     --name="${_cont_name}" "${_cont_mounts[@]}" \
     "${CONT}" sleep infinity
